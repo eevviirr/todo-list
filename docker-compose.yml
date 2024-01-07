@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+    frontend:
+        build: ./client
+        ports:
+            - "80:4173"
+
+    backend:
+        build: ./server
+        ports:
+            - "8000:8000"
+        depends_on:
+            - mongo
+    mongo:
+        image: mongo:latest
+        volumes:
+            - mongo_volume:/data/db
+
+networks:
+    mynetwork:
+        driver: bridge
+
+volumes:
+    mongo_volume:

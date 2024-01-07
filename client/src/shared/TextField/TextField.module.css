@@ -1,0 +1,5 @@
+.input {
+    @apply p-7 outline-none bg-transparent rounded-[20px] text-white text-xl font-semibold w-full;
+
+    border: 3px solid white;
+}
